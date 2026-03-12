@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}CardioInsight — Heart Disease Analysis{% endblock %}
+
+{% block content %}
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-tag">
+                <span class="dot"></span>
+                CDC BRFSS 2020 Dataset · 319,795 Records
+            </div>
+            <h1 class="hero-title">
+                Uncover the <span class="highlight">Heart Disease</span><br>Patterns That Matter
+            </h1>
+            <p class="hero-desc">
+                Interactive analysis of cardiovascular health using real CDC survey data.
+                Explore risk factors across age, gender, race and lifestyle through
+                10 Tableau visualizations.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">
+                    Open Dashboard <span class="btn-arrow">→</span>
+                </a>
+                <a href="{{ url_for('visualizations') }}" class="btn btn-outline btn-lg">
+                    View Charts
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat">
+                    <span class="hstat-num">319K</span>
+                    <span class="hstat-label">Records</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">10</span>
+                    <span class="hstat-label">Visualizations</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">8.6%</span>
+                    <span class="hstat-label">Prevalence Rate</span>
+                </div>
+                <div class="hstat">
+                    <span class="hstat-num">#1</span>
+                    <span class="hstat-label">Global Cause of Death</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features-section">
+    <div class="container">
+        <div class="features-header">
+            <div class="section-eyebrow">What's Inside</div>
+            <h2 class="section-title">Everything you need to explore the data</h2>
+            <p class="section-subtitle">From raw visualizations to a guided narrative — discover every dimension of cardiovascular health risk.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">📊</div>
+                <h3>10 Unique Visualizations</h3>
+                <p>Age, gender, race, BMI, smoking, alcohol, physical activity — each factor visualized with precision in Tableau.</p>
+                <a href="{{ url_for('visualizations') }}" class="feat-link">Explore charts →</a>
+            </div>
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">🖥️</div>
+                <h3>Interactive Dashboard</h3>
+                <p>Filter, zoom and drill down across the full dataset in a single embedded Tableau dashboard panel.</p>
+                <a href="{{ url_for('dashboard') }}" class="feat-link">Open dashboard →</a>
+            </div>
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">📖</div>
+                <h3>Narrative Data Story</h3>
+                <p>Follow a curated sequence of insights — from prevalence rates to lifestyle correlations — in one guided story.</p>
+                <a href="{{ url_for('story') }}" class="feat-link">Read the story →</a>
+            </div>
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">🔬</div>
+                <h3>CDC-Sourced Dataset</h3>
+                <p>Based on the real-world BRFSS 2020 dataset with 319,795 survey responses from across the United States.</p>
+                <a href="{{ url_for('about') }}" class="feat-link">Learn more →</a>
+            </div>
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">⚕️</div>
+                <h3>Key Risk Factor Analysis</h3>
+                <p>Deep-dives into obesity, diabetes, stroke, smoking, sleep habits and physical activity as disease predictors.</p>
+                <a href="{{ url_for('about') }}" class="feat-link">View factors →</a>
+            </div>
+            <div class="feat-card fade-in">
+                <div class="feat-icon-wrap">🌐</div>
+                <h3>Race &amp; Age Breakdown</h3>
+                <p>Demographic analysis across age groups and racial categories reveals hidden disparities in heart disease rates.</p>
+                <a href="{{ url_for('visualizations') }}" class="feat-link">See breakdown →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

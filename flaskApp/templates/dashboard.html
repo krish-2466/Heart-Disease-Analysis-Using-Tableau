@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — CardioInsight{% endblock %}
+
+{% block content %}
+
+<div class="page-banner">
+    <div class="container">
+        <div class="banner-inner">
+            <div class="banner-breadcrumb">
+                <a href="{{ url_for('index') }}">Home</a>
+                <span>/</span>
+                Dashboard
+            </div>
+            <h1 class="banner-title">Interactive Dashboard</h1>
+            <p class="banner-desc">Explore the full heart disease dataset through an embedded Tableau dashboard. Filter, zoom and interact directly.</p>
+        </div>
+    </div>
+</div>
+
+<section class="dashboard-page">
+    <div class="container">
+        <div class="dash-layout">
+
+            <!-- Main Embed -->
+            <div class="dash-main">
+                <div class="dash-embed-header">
+                    <div class="dash-embed-title">
+                        <span class="dash-live-dot"></span>
+                        <span>Heart Disease Analysis Dashboard</span>
+                    </div>
+                    <div class="dash-window-btns">
+                        <div class="wbtn red"></div>
+                        <div class="wbtn amber"></div>
+                        <div class="wbtn green"></div>
+                    </div>
+                </div>
+
+                <div id="dashboard-embed">
+                    {% for db in dashboards %}
+                    <div class="dashboard-slide {% if loop.first %}active{% endif %}" data-dashboard="{{ db.id }}">
+                        <iframe src="{{ db.url }}" width="100%" height="700" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="dash-controls">
+                    <button class="btn-dash" id="prev-btn" onclick="changeDashboard(-1)" disabled>
+                        ← Prev
+                    </button>
+                    <div class="dash-indicators">
+                        {% for db in dashboards %}
+                        <span class="indicator {% if loop.first %}active{% endif %}" data-index="{{ loop.index0 }}"></span>
+                        {% endfor %}
+                    </div>
+                    <button class="btn-dash active-ctrl" id="next-btn" onclick="changeDashboard(1)">
+                        Next →
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Legend strip -->
+        <div class="dash-legend-strip">
+            <span class="legend-strip-label">Legend</span>
+            <span class="legend-strip-item"><span class="legend-swatch" style="background:#4E79A7"></span>Heart Disease: No</span>
+            <span class="legend-strip-item"><span class="legend-swatch" style="background:#E15759"></span>Heart Disease: Yes</span>
+            <span class="legend-strip-item"><span class="legend-swatch" style="background:#76B7B2"></span>Diabetic: No</span>
+            <span class="legend-strip-item"><span class="legend-swatch" style="background:#F28E2B"></span>Diabetic: Yes</span>
+            <span class="legend-strip-item"><span class="legend-swatch" style="background:#59A14F"></span>Stroke: Yes</span>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}About — CardioInsight{% endblock %}
+
+{% block content %}
+
+<div class="page-banner">
+    <div class="container">
+        <div class="banner-inner">
+            <div class="banner-breadcrumb">
+                <a href="{{ url_for('index') }}">Home</a>
+                <span>/</span>
+                About
+            </div>
+            <h1 class="banner-title">About Heart Disease</h1>
+            <p class="banner-desc">Understanding cardiovascular disease — the world's leading cause of death and why data analysis matters.</p>
+        </div>
+    </div>
+</div>
+
+<section class="about-intro">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-body">
+                <div class="section-eyebrow">The Problem</div>
+                <h2 class="section-title">Why cardiovascular health matters</h2>
+                <p>
+                    Heart disease encompasses a group of conditions affecting the structure and function of the heart —
+                    from coronary artery disease to arrhythmias and congenital defects. It remains the
+                    <strong>number one killer globally</strong>, responsible for 17.9 million deaths each year.
+                </p>
+                <p>
+                    Research from the National Heart, Lung and Blood Institute identifies <strong>obesity</strong>,
+                    <strong>sedentary lifestyle</strong> and <strong>smoking</strong> as the three most critical
+                    modifiable risk factors. This project analyses those patterns using real CDC survey data.
+                </p>
+                <p>
+                    Our dataset — derived from the CDC's BRFSS 2020 survey — contains <strong>319,795 records</strong>
+                    and 18 variables covering demographics, lifestyle habits, and pre-existing conditions.
+                </p>
+                <div class="about-stat-row">
+                    <div class="about-stat">
+                        <span class="num">17.9M</span>
+                        <span class="lbl">Deaths / year</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="num">#1</span>
+                        <span class="lbl">Global Killer</span>
+                    </div>
+                    <div class="about-stat">
+                        <span class="num">80%</span>
+                        <span class="lbl">Preventable</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visual">🫀</div>
+        </div>
+    </div>
+</section>
+
+<section class="risk-section">
+    <div class="container">
+        <div class="section-eyebrow">Risk Factors</div>
+        <h2 class="section-title">What drives cardiovascular risk?</h2>
+        <br>
+        <div class="risk-grid">
+            <div class="risk-card fade-in">
+                <div class="risk-icon">🍔</div>
+                <h3>Obesity</h3>
+                <p>Excess body weight increases strain on the heart, raises blood pressure, and promotes plaque buildup in arteries.</p>
+            </div>
+            <div class="risk-card fade-in">
+                <div class="risk-icon">🛋️</div>
+                <h3>Sedentary Lifestyle</h3>
+                <p>Physical inactivity weakens the cardiovascular system and is strongly correlated with heart disease incidence.</p>
+            </div>
+            <div class="risk-card fade-in">
+                <div class="risk-icon">🚬</div>
+                <h3>Smoking</h3>
+                <p>Tobacco use damages blood vessel walls, reduces oxygen delivery and roughly doubles the risk of heart disease.</p>
+            </div>
+            <div class="risk-card fade-in">
+                <div class="risk-icon">🍷</div>
+                <h3>Alcohol Consumption</h3>
+                <p>Heavy drinking raises blood pressure, weakens the heart muscle and contributes to arrhythmia and heart failure.</p>
+            </div>
+            <div class="risk-card fade-in">
+                <div class="risk-icon">🩺</div>
+                <h3>Diabetes</h3>
+                <p>High blood glucose damages blood vessels and nerves controlling the heart — doubling cardiovascular risk.</p>
+            </div>
+            <div class="risk-card fade-in">
+                <div class="risk-icon">😰</div>
+                <h3>Chronic Stress</h3>
+                <p>Long-term stress triggers hormonal responses that raise blood pressure and promote inflammatory pathways.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

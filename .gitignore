@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment / secrets
+.env
+.env.*
+config.ini
+*.cfg
+
+# Data files (large binary/spreadsheet files)
+data/*.xlsx
+data/*.csv
+data/*.json
+*.db
+*.sqlite
+
+# Tableau (large binary; store in Releases or LFS if needed)
+# Tableau workbook/*.twbx
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Coverage / testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
